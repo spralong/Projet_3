@@ -55,26 +55,20 @@ html{
 body{
     margin: unset;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
+    position: relative;
 } 
 
 .loading
 {
-    z-index: 0;
     display: block;
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 1;
     background-color: rgba(255, 255, 255, 0.850);
     animation: Backspin 3000ms 1 forwards;
     animation-delay: 3000ms;
-
-/*  Problem : les animations :hover ne fonctionne pas quand loader actif 
-
-    overflow: hidden; --> ne sert a tchi 
-    display: none; --> fait tout disparaitre
-*/
 }
 
 .loading::after
@@ -91,7 +85,6 @@ body{
   border-bottom-color: #9356dc;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  z-index: 2;
 }
 
 @keyframes Backspin
@@ -102,6 +95,7 @@ body{
   100%{
     opacity: 0;
     display: none;
+    z-index: -1;
   }
 }
 
@@ -135,12 +129,28 @@ body{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    gap: 15px;
     font-family: 'robotoregular';
     font-weight: 600;
-    font-size: 4vw;
     border-top: 2px solid rgb(213,213,213);
     background-color: rgb(234,234,234);
+    &__formulaire{
+        display: flex;
+        justify-content: center;
+        margin-left: 10%;
+        width: 100%;
+        gap: 15px;
+        font-size: 4vw;
+    }
+    &__input{
+        width: 40%;
+        font-size: 3.5vw;
+        border: none;
+        background-color:rgb(234,234,234);
+    }
+    &__icone{
+        align-items: center;
+        display: flex;
+    }
 }
 
 /* Réservation */
@@ -168,14 +178,22 @@ body{
         padding: 5%;
     }
     .btn-pink{
-    padding: 3%;
-    border-radius: 40vh;
-    border: 0px;
-    color: white;
-    background-color: #FF79DA;
-    box-shadow: inset -10px -40px 40px -20px #9356dc;
-    font-family: 'robotomedium';
-    font-size: 4vw;
+        padding: 3%;
+        border-radius: 40vh;
+        border: 0px;
+        color: white;
+        background-color: #FF79DA;
+        box-shadow: inset -10px -40px 40px -20px #9356dc, 4px 2px 9px 4px #d6d5d5;
+        font-family: 'robotomedium';
+        font-size: 4vw; 
+        &__lien{
+            text-decoration: none;
+            color: white;
+        }
+        &:hover{
+            filter: brightness(1.20);
+            box-shadow: inset -10px -40px 40px -20px #9356dc, 4px 2px 9px 4px #9c9a9a;
+        }
     }
 }
 
@@ -236,7 +254,7 @@ body{
         font-weight: 550;
         font-family: 'robotomedium';
     }
-}
+} 
 
 /* Restaurants */
 
@@ -246,6 +264,10 @@ body{
     background-color: $background-color--grey;
     padding: 5%;
     gap: 5vw;
+    &__lien{
+        text-decoration: none;
+        color: black;
+    }
     &__liste-card{
         gap: 20px 20px;
     }
@@ -256,9 +278,10 @@ body{
     }
     &__card{
         position: relative;
+        margin-bottom: 15px;
        border-radius: 15px;
        background-color: #FFFF;
-       box-shadow: 0px 2px 9px 4px #F0F0F0;
+       box-shadow: 4px 2px 9px 4px #d6d5d5;
         &--image{
             width: 100%;
             height: 35vw;
@@ -302,8 +325,8 @@ body{
         }
         &--coeur-plein{
             position: absolute;
-            top: 23%;
-            height: 7vw;
+            top: 14%;
+            height: 8.5vw;
             border-radius: 0px; 
             transform: scale(0);
             transform-origin: bottom;
@@ -312,7 +335,7 @@ body{
     }
     &__nouveau{
     position: absolute;
-    background-color: aquamarine;
+    background-color: #99E2D0;
     margin-top: 10px;
     padding: 5px;
     right: 12px;
@@ -362,6 +385,10 @@ footer{
     & li{
         margin-bottom: 5px;
     }
+    & a{
+        text-decoration: none;
+        color: white;
+    }
 }
 
 /* Responsive */
@@ -371,7 +398,14 @@ footer{
 @media screen and (min-width:760px)
 {
     .div-localisation{
-        font-size: 3vh;
+        font-size: 2.5vh;
+        &__input{
+            font-size: 2.5vh;
+            width: 30%;
+        }
+        &__icone i{
+            font-size: 2.5vh;
+        }
     }
     .containeur-1-1{
         display: flex;
@@ -449,8 +483,8 @@ footer{
             height: 4vh;
         }
         &__icone--coeur-plein{
-            height: 3.5vh;
-            top: 27%;
+            height: 4.2vh;
+            top: 21%;
         }
     }
     footer{
@@ -486,7 +520,13 @@ footer{
     .div-localisation{
         border-bottom: 2px solid rgb(213,213,213);
         border-top: none;
-        font-size: 2vh;
+        &__formulaire{
+            font-size: 2vh;
+        }
+        &__input{
+            font-size: 2vh;
+            min-width: 150px;
+        }
     }
     .div-reservation{
         width: 100%;

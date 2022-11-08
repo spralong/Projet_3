@@ -102,12 +102,28 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  gap: 15px;
   font-family: "robotoregular";
   font-weight: 600;
-  font-size: 4vw;
   border-top: 2px solid rgb(213, 213, 213);
   background-color: rgb(234, 234, 234);
+}
+.div-localisation__formulaire {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
+  width: 100%;
+  gap: 15px;
+  font-size: 4vw;
+}
+.div-localisation__input {
+  width: 40%;
+  font-size: 3.5vw;
+  border: none;
+  background-color: rgb(234, 234, 234);
+}
+.div-localisation__icone {
+  align-items: center;
+  display: flex;
 }
 
 /* Réservation */
@@ -144,8 +160,13 @@ body {
   font-family: "robotomedium";
   font-size: 4vw;
 }
+.div-reservation .btn-pink__lien {
+  text-decoration: none;
+  color: white;
+}
 .div-reservation .btn-pink:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
+  box-shadow: inset -10px -40px 40px -20px #9356dc, 4px 2px 9px 4px #9c9a9a;
 }
 
 /* Fonctionnement */
@@ -214,6 +235,10 @@ body {
   padding: 5%;
   gap: 5vw;
 }
+.section-restaurants__lien {
+  text-decoration: none;
+  color: black;
+}
 .section-restaurants__liste-card {
   gap: 20px 20px;
 }
@@ -279,7 +304,7 @@ body {
 }
 .section-restaurants__nouveau {
   position: absolute;
-  background-color: aquamarine;
+  background-color: #99E2D0;
   margin-top: 10px;
   padding: 5px;
   right: 12px;
@@ -323,12 +348,23 @@ footer h2 {
 .footer-list li {
   margin-bottom: 5px;
 }
+.footer-list a {
+  text-decoration: none;
+  color: white;
+}
 
 /* Responsive */
 /* Tablette */
 @media screen and (min-width: 760px) {
   .div-localisation {
-    font-size: 3vh;
+    font-size: 2.5vh;
+  }
+  .div-localisation__input {
+    font-size: 2.5vh;
+    width: 30%;
+  }
+  .div-localisation__icone i {
+    font-size: 2.5vh;
   }
   .containeur-1-1 {
     display: flex;
@@ -439,7 +475,13 @@ footer h2 {
   .div-localisation {
     border-bottom: 2px solid rgb(213, 213, 213);
     border-top: none;
+  }
+  .div-localisation__formulaire {
     font-size: 2vh;
+  }
+  .div-localisation__input {
+    font-size: 2vh;
+    min-width: 150px;
   }
   .div-reservation {
     width: 100%;

@@ -1,0 +1,19 @@
+{
+  "name": "projet_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/menu.scss:./css/menu.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spralong/Projet_3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spralong/Projet_3/issues"
+  },
+  "homepage": "https://github.com/spralong/Projet_3#readme"
+}
