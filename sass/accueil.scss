@@ -73,7 +73,7 @@ body{
 
 .loading::after
 {
-  content : "";
+//   content : "";
   display: block;
   position: absolute;
   top: 50%;
@@ -373,6 +373,10 @@ footer{
     &__icone{
         font-size: 90%;
         margin-right: 10px;
+    }
+    &__icone-1{
+        font-size: 90%;
+        margin-right: 15px;
     }
     & ul{
         margin: 0px;

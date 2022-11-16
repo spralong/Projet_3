@@ -350,6 +350,10 @@ footer h2 {
   font-size: 12px;
   margin-right: 10px;
 }
+.footer-list__icone-1 {
+  font-size: 90%;
+  margin-right: 15px;
+}
 .footer-list ul {
   margin: 0px;
   list-style-type: none;
